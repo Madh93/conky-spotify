@@ -11,7 +11,7 @@ if [ "$id_new" != "$id_current" ]; then
 
 	if [ "$cover" == "" ]; then
 
-		imgurl=`~/.conky/conky-spotify/scripts/imgurl.sh`
+		imgurl=`~/.conky/conky-spotify/scripts/imgurl.sh $id_new`
 		wget -O ~/.conky/conky-spotify/covers/$id_new.jpg $imgurl
 		cover=`ls ~/.conky/conky-spotify/covers | grep $id_new`
 	fi
