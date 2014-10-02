@@ -1,0 +1,37 @@
+background yes
+font Snap.se:size=8
+xftfont Snap.se:size=8
+use_xft yes
+xftalpha 0.1
+update_interval 1
+total_run_times 0
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+double_buffer yes
+draw_shades no
+draw_outline no
+draw_borders yes
+draw_graph_borders no
+minimum_size 650
+maximum_width 650
+default_color ffffff
+default_shade_color 000000
+default_outline_color 000000
+alignment top_right
+#gap_x 0
+#gap_y 0
+no_buffers yes
+cpu_avg_samples 2
+override_utf8_locale yes
+uppercase no # set to yes if you want all text to be in uppercase
+use_spacer no
+
+imlib_cache_size 0  
+
+    TEXT
+
+	HELLO WORLD
