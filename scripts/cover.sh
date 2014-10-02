@@ -1,6 +1,6 @@
 #!/bin/bash
 
-id_current=`cat ~/.conky/conky-spotify/scripts/current_cover`
+id_current=`cat ~/.conky/conky-spotify/current/current.txt`
 id_new=`~/.conky/conky-spotify/scripts/id.sh`
 cover=
 imgurl=
@@ -17,8 +17,8 @@ if [ "$id_new" != "$id_current" ]; then
 	fi
 
 	if [ "$cover" != "" ]; then
-		cp ~/.conky/conky-spotify/covers/$cover ~/.conky/conky-spotify/covers/current.jpg
+		cp ~/.conky/conky-spotify/covers/$cover ~/.conky/conky-spotify/current/current.jpg
 	else
-		cp ~/.conky/conky-spotify/covers/empty.jpg ~/.conky/conky-spotify/covers/current.jpg
+		cp ~/.conky/conky-spotify/covers/empty.jpg ~/.conky/conky-spotify/current/current.jpg
 	fi
 fi	
