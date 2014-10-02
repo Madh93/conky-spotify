@@ -34,4 +34,6 @@ imlib_cache_size 0
 
     TEXT
 
-	HELLO WORLD
+	Title: ${exec ~/.conky/conky-spotify/scripts/title.sh} as
+	Artist: ${exec ~/.conky/conky-spotify/scripts/artist.sh}
+	Album: ${exec ~/.conky/conky-spotify/scripts/album.sh}
