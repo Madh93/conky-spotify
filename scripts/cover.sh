@@ -21,4 +21,6 @@ if [ "$id_new" != "$id_current" ]; then
 	else
 		cp ~/.conky/conky-spotify/covers/empty.jpg ~/.conky/conky-spotify/current/current.jpg
 	fi
+
+	echo $id_new > ~/.conky/conky-spotify/current/current.txt
 fi	
