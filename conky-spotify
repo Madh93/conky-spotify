@@ -22,7 +22,7 @@ default_color ffffff
 default_shade_color 000000
 default_outline_color 000000
 alignment top_right
-#gap_x 0
+gap_x 35
 #gap_y 0
 no_buffers yes
 cpu_avg_samples 2
