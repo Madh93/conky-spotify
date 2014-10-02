@@ -34,6 +34,6 @@ imlib_cache_size 0
 
     TEXT
 
-	Title: ${exec ~/.conky/conky-spotify/scripts/title.sh} as
+	Title: ${exec ~/.conky/conky-spotify/scripts/title.sh}
 	Artist: ${exec ~/.conky/conky-spotify/scripts/artist.sh}
 	Album: ${exec ~/.conky/conky-spotify/scripts/album.sh}
