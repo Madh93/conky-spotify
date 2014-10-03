@@ -1,26 +1,27 @@
 #!/bin/bash
 
-id_current=`cat ~/.conky/conky-spotify/current/current.txt`
-id_new=`~/.conky/conky-spotify/scripts/id.sh`
+path=$HOME"~/.conky/conky-spotify"
+id_current=`cat $path/current/current.txt`
+id_new=`$path/scripts/id.sh`
 cover=
 imgurl=
 
 if [ "$id_new" != "$id_current" ]; then
 
-	cover=`ls ~/.conky/conky-spotify/covers | grep $id_new`
+	cover=`ls $path/covers | grep $id_new`
 
 	if [ "$cover" == "" ]; then
 
-		imgurl=`~/.conky/conky-spotify/scripts/imgurl.sh $id_new`
-		wget -O ~/.conky/conky-spotify/covers/$id_new.jpg $imgurl
-		cover=`ls ~/.conky/conky-spotify/covers | grep $id_new`
+		imgurl=`$path/scripts/imgurl.sh $id_new`
+		wget -O $path/covers/$id_new.jpg $imgurl
+		cover=`ls $path/covers | grep $id_new`
 	fi
 
 	if [ "$cover" != "" ]; then
-		cp ~/.conky/conky-spotify/covers/$cover ~/.conky/conky-spotify/current/current.jpg
+		cp $path/covers/$cover $path/current/current.jpg
 	else
-		cp ~/.conky/conky-spotify/covers/empty.jpg ~/.conky/conky-spotify/current/current.jpg
+		cp $path/covers/empty.jpg $path/current/current.jpg
 	fi
 
-	echo $id_new > ~/.conky/conky-spotify/current/current.txt
-fi	
+	echo $id_new > $path/current/current.txt
+fi
