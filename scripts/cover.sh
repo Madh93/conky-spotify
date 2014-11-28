@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path=$HOME"~/.conky/conky-spotify"
+path="~/.conky/conky-spotify"
 id_current=`cat $path/current/current.txt`
 id_new=`$path/scripts/id.sh`
 cover=
