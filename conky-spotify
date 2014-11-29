@@ -23,7 +23,7 @@ default_shade_color 000000
 default_outline_color 000000
 alignment top_right
 gap_x 35
-#gap_y 0
+gap_y 50
 no_buffers yes
 cpu_avg_samples 2
 override_utf8_locale yes
@@ -34,7 +34,7 @@ imlib_cache_size 0
 
     TEXT
 
-${exec ~/.conky/conky-spotify/scripts/cover.sh}
+${if_running spotify}${exec ~/.conky/conky-spotify/scripts/cover.sh}
 ${voffset -60}${image ~/.conky/conky-spotify/current/current.jpg -p 0,0 -s 164x164}
 ${image ~/.conky/conky-spotify/background.png}
 
@@ -44,3 +44,4 @@ ${alignr 388}${voffset -20}${color EAEAEA}${font GE Inspira:pixelsize=11}Artist:
                                                            ${color #FFFFFF}${font GE Inspira:pixelsize=28}${exec ~/.conky/conky-spotify/scripts/artist.sh}
 ${alignr 394}${voffset -16}${color EAEAEA}${font GE Inspira:pixelsize=11}Album: 
                                                            ${color #FFFFFF}${font GE Inspira:pixelsize=20}${exec ~/.conky/conky-spotify/scripts/album.sh}
+                                                           ${endif}
