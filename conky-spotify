@@ -7,7 +7,7 @@ update_interval 1
 total_run_times 0
 
 own_window yes
-own_window_type override
+own_window_type desktop
 own_window_transparent yes
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
@@ -34,14 +34,12 @@ imlib_cache_size 0
 
     TEXT
 
-${if_running spotify}${exec ~/.conky/conky-spotify/scripts/cover.sh}
-${voffset -60}${image ~/.conky/conky-spotify/current/current.jpg -p 0,0 -s 164x164}
-${image ~/.conky/conky-spotify/background.png}
-
-${alignr 450}${color EAEAEA}${font GE Inspira:pixelsize=11}Title: 
-                                                           ${color #FFFFFF}${font GE Inspira:pixelsize=36}${exec ~/.conky/conky-spotify/scripts/title.sh}
-${alignr 388}${voffset -20}${color EAEAEA}${font GE Inspira:pixelsize=11}Artist: 
-                                                           ${color #FFFFFF}${font GE Inspira:pixelsize=28}${exec ~/.conky/conky-spotify/scripts/artist.sh}
-${alignr 394}${voffset -16}${color EAEAEA}${font GE Inspira:pixelsize=11}Album: 
-                                                           ${color #FFFFFF}${font GE Inspira:pixelsize=20}${exec ~/.conky/conky-spotify/scripts/album.sh}
-                                                           ${endif}
+    ${if_running spotify}${exec ~/.conky/conky-spotify/scripts/cover.sh}
+    ${voffset -38}${image ~/.conky/conky-spotify/current/current.jpg -p 0,0 -s 164x164}
+    ${voffset -5}${image ~/.conky/conky-spotify/background.png}
+                                            ${voffset 0}${color EAEAEA}${font GE Inspira:pixelsize=11}Title:
+                                                            ${voffset -2}${color #FFFFFF}${font GE Inspira:pixelsize=36}${exec ~/.conky/conky-spotify/scripts/title.sh}
+                      ${voffset -25}${color EAEAEA}${font GE Inspira:pixelsize=11}Artist:
+                                                            ${color #FFFFFF}${font GE Inspira:pixelsize=30}${exec ~/.conky/conky-spotify/scripts/artist.sh}
+                         ${voffset -15}${color EAEAEA}${font GE Inspira:pixelsize=11}Album:
+                                                            ${voffset 2}${color #FFFFFF}${font GE Inspira:pixelsize=26}${exec ~/.conky/conky-spotify/scripts/album.sh} 
