@@ -41,10 +41,10 @@ ${image ~/.conky/conky-spotify/current/current.jpg -p 0,0 -s 164x164}
 ${image ~/.conky/conky-spotify/background.png}
 # --- Show now playing information ---
 ${voffset -110}
-${goto 180}${font Noto Sans:size=8}Título:
+${goto 180}${font Noto Sans:size=8}Title:
 ${goto 190}${font GE Inspira:size=22}${exec ~/.conky/conky-spotify/scripts/title.sh}
 ${voffset -46}
-${goto 180}${font Noto Sans:size=8}Artista:
+${goto 180}${font Noto Sans:size=8}Artist:
 ${goto 190}${font GE Inspira:size=22}${exec ~/.conky/conky-spotify/scripts/artist.sh}
 ${voffset -46}
 ${goto 180}${font Noto Sans:size=8}Album:
