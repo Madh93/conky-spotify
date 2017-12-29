@@ -34,8 +34,7 @@ conky.config = {
 conky.text = [[
 # --- Get Spotify Cover ---
 ${if_running spotify}
-  ${exec ~/.conky/conky-spotify/scripts/cover.sh}
-${endif}
+${exec ~/.conky/conky-spotify/scripts/cover.sh}
 # --- Show wallpaper and cover ---
 ${image ~/.conky/conky-spotify/current/current.jpg -p 0,0 -s 164x164}
 ${image ~/.conky/conky-spotify/background.png}
@@ -49,4 +48,5 @@ ${goto 190}${font GE Inspira:size=22}${exec ~/.conky/conky-spotify/scripts/artis
 ${voffset -46}
 ${goto 180}${font Noto Sans:size=8}Album:
 ${goto 190}${font GE Inspira:size=22}${exec ~/.conky/conky-spotify/scripts/album.sh}
+${endif}
 ]];
