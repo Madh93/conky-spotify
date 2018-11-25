@@ -1,0 +1,46 @@
+conky.config = {
+    alignment = 'bottom_right',
+    background = false,
+    border_width = 1,
+    cpu_avg_samples = 2,
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    draw_borders = false,
+    draw_graph_borders = true,
+    draw_outline = false,
+    draw_shades = false,
+    use_xft = true,
+    font = 'DejaVu Sans Mono:size=9',
+    gap_x = 20,
+    gap_y = 20,
+    minimum_height = 5,
+    minimum_width = 400,
+    net_avg_samples = 2,
+    no_buffers = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = false,
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_argb_visual = true,
+    own_window_argb_value = 150,
+    stippled_borders = 0,
+    update_interval = 1.0,
+    uppercase = false,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false
+};
+
+conky.text = [[
+${if_running spotify}${voffset 10}${color green}Spotify (${exec ~/.conky/conky-spotify/scripts/status.sh}) $hr $color
+# --- Get Spotify Cover ---
+# --- added -n (no caching) flag to image as found it was caching it, as it was not updating the cover for me correcty. Also, size and location of the image placement is specific to my setup, so tinker with that yourself ---
+${exec ~/.conky/conky-spotify/scripts/cover.sh}${image ~/.conky/conky-spotify/current/current.jpg -p 0,587 -s 60x60 -n}
+${offset 70}Title: ${exec ~/.conky/conky-spotify/scripts/title.sh}
+${offset 70}Artist: ${exec ~/.conky/conky-spotify/scripts/artist.sh}
+${offset 70}Album: ${exec ~/.conky/conky-spotify/scripts/album.sh}${voffset 10}${endif}
+]];
+

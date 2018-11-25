@@ -11,3 +11,7 @@ To install Conky-Spotify:
     wget -O conky-spotify https://codeload.github.com/Madh93/conky-spotify/zip/master
     unzip conky-spotify
     mv conky-spotify-master ~/.conky/conky-spotify
+
+## Conky-Small Setup
+
+![Alt text](https://i.imgur.com/wsiD4X6.png "Sample of conky-spotify-small")
