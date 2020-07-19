@@ -15,7 +15,7 @@ if [ "$id_new" != "$id_current" ]; then
 	    wget -q -O ~/.conky/conky-spotify/covers/$id_new.jpg $imgurl &> /dev/null
 		# clean up covers folder, keeping only the latest X amount, in below example it is 10
 	    rm -f `ls -t ~/.conky/conky-spotify/covers/* | awk 'NR>10'`
-	    rm wget-log #wget-logs are accumulated otherwise
+	    rm -f wget-log #wget-logs are accumulated otherwise
 	    cover=`ls ~/.conky/conky-spotify/covers | grep $id_new`
 	fi
 
