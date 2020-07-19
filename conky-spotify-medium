@@ -50,5 +50,6 @@ ${goto 132}${font GE Inspira:size=14}${exec ~/.conky/conky-spotify/scripts/artis
 ${voffset -32}
 ${goto 124}${font Noto Sans:size=7}Album:
 ${goto 132}${font GE Inspira:size=14}${exec ~/.conky/conky-spotify/scripts/album.sh}
+${voffset -32}
 ]];
 
