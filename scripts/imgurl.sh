@@ -4,5 +4,5 @@ trackid=`dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpri
 #echo $trackid
 oembed_url="https://open.spotify.com/oembed?url=$trackid"
 #echo $oembed_url
-imgurl=`curl -s $oembed_url | jq '.thumbnail_url' | tr -d '"'`
+imgurl=`curl -s $oembed_url | grep -o -E "\"thumbnail_url\":\"http[^\"]+\"" | sed 's/\:/\n/' | tail -n 1 | tr -d '"'`
 echo $imgurl
