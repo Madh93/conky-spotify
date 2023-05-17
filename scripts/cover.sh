@@ -23,6 +23,7 @@ else
 		else
 			imgurl=`~/.conky/conky-spotify/scripts/imgurl.sh`
 			`wget -q -O ~/.conky/conky-spotify/covers/$imgname.jpg $imgurl &> /dev/null`
+			`touch ~/.conky/conky-spotify/covers/$imgname.jpg`
 			`cp ~/.conky/conky-spotify/covers/$imgname.jpg ~/.conky/conky-spotify/current/current.jpg`
 			# clean up covers folder, keeping only the latest X amount, in below example it is 10
 			rm -f `ls -t ~/.conky/conky-spotify/covers/* | awk 'NR>10'`
