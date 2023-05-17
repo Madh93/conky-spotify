@@ -4,27 +4,30 @@ id_current=$(cat ~/.conky/conky-spotify/current/current.txt)
 id_new=`~/.conky/conky-spotify/scripts/id.sh`
 cover=
 imgurl=
+dbus=`busctl --user list | grep "spotify"`
 
-if [ "$id_new" != "$id_current" ]; then
+if [ "$dbus" == "" ]; then
+       `cp ~/.conky/conky-spotify/empty.jpg ~/.conky/conky-spotify/current/current.jpg`
+	echo "" > ~/.conky/conky-spotify/current/current.txt
+else
+	if [ "$id_new" != "$id_current" ]; then
 
-	cover=`ls ~/.conky/conky-spotify/covers | grep $id_new`
+		echo $id_new > ~/.conky/conky-spotify/current/current.txt
+		imgname=`cat ~/.conky/conky-spotify/current/current.txt | cut -d '/' -f5`
 
-	if [ "$cover" == "" ]; then
+		cover=`ls ~/.conky/conky-spotify/covers | grep "$id_new"`
 
-	    imgurl=`~/.conky/conky-spotify/scripts/imgurl.sh $id_new`
-	    wget -q -O ~/.conky/conky-spotify/covers/$id_new.jpg $imgurl &> /dev/null
-	    touch ~/.conky/conky-spotify/covers/$id_new.jpg
-		# clean up covers folder, keeping only the latest X amount, in below example it is 10
-	    rm -f `ls -t ~/.conky/conky-spotify/covers/* | awk 'NR>10'`
-	    rm -f wget-log #wget-logs are accumulated otherwise
-	    cover=`ls ~/.conky/conky-spotify/covers | grep $id_new`
+		if grep -q "${imgname}" <<< "$cover"
+		then
+			`cp ~/.conky/conky-spotify/covers/$imgname.jpg ~/.conky/conky-spotify/current/current.jpg`
+		else
+			imgurl=`~/.conky/conky-spotify/scripts/imgurl.sh`
+			`wget -q -O ~/.conky/conky-spotify/covers/$imgname.jpg $imgurl &> /dev/null`
+			`touch ~/.conky/conky-spotify/covers/$imgname.jpg`
+			`cp ~/.conky/conky-spotify/covers/$imgname.jpg ~/.conky/conky-spotify/current/current.jpg`
+			# clean up covers folder, keeping only the latest X amount, in below example it is 10
+			rm -f `ls -t ~/.conky/conky-spotify/covers/* | awk 'NR>10'`
+			rm -f wget-log #wget-logs are accumulated otherwise
+		fi
 	fi
-
-	if [ "$cover" != "" ]; then
-		cp ~/.conky/conky-spotify/covers/$cover ~/.conky/conky-spotify/current/current.jpg
-	else
-		cp ~/.conky/conky-spotify/empty.jpg ~/.conky/conky-spotify/current/current.jpg
-	fi
-
-	echo $id_new > ~/.conky/conky-spotify/current/current.txt
 fi
