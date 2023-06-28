@@ -1,8 +1,18 @@
 # Conky-Spotify
 
-Conky-Spotify show current Spotify track in Conky (title, artist, album, cover...)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-![Alt text](http://oi57.tinypic.com/2w3ylhv.jpg "Sample of conky-spotify")
+Conky-Spotify shows current Spotify track in Conky (title, artist, album, cover...).
+
+## Screenshots
+
+### Default setup
+
+![Alt text](docs/img/conky-spotify.jpg "Sample conky-spotify")
+
+### Small Setup
+
+![Alt text](docs/img/conky-spotify-small.jpg "Sample conky-spotify-small")
 
 ## Install
 
@@ -12,6 +22,10 @@ To install Conky-Spotify:
     unzip conky-spotify
     mv conky-spotify-master ~/.conky/conky-spotify
 
-## Conky-Small Setup
+## Useful Links
 
-![Alt text](https://i.imgur.com/wsiD4X6.png "Sample of conky-spotify-small")
+- [Conky](https://github.com/brndnmtthws/conky)
+
+## License
+
+This project is licensed under the [GNU GPL v3 license](LICENSE).
